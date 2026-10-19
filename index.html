@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOOP — Customer Feedback Intelligence</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">L</div><div><b>LOOP</b><small>Feedback intelligence</small></div></div>
+    <div class="workspace"><span class="workspace-dot"></span> Acme Workspace <span class="chevron">⌄</span></div>
+    <p class="nav-label">WORKSPACE</p>
+    <button class="nav-item active" data-view="overview"><span>◫</span> Overview</button>
+    <button class="nav-item" data-view="feedback"><span>▤</span> Feedback inbox <em id="navCount">128</em></button>
+    <button class="nav-item" data-view="themes"><span>◉</span> Themes & trends</button>
+    <button class="nav-item" data-view="reports"><span>▧</span> VoC reports</button>
+    <p class="nav-label">MANAGE</p>
+    <button class="nav-item" data-view="sources"><span>↗</span> Data sources</button>
+    <button class="nav-item" data-view="settings"><span>⚙</span> Workspace settings</button>
+    <div class="sidebar-bottom"><div class="avatar">SP</div><div><b>Shaurya Pandey</b><small>Workspace admin</small></div><span class="more">•••</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="crumb">Workspace</span><span class="slash">/</span><b id="pageTitle">Overview</b></div><div class="top-actions"><span class="sync"><i></i> All sources synced</span><button class="icon-btn" title="Notifications">♧</button><div class="avatar small">SP</div></div></header>
+    <section class="content">
+      <div class="welcome-row"><div><p class="eyebrow">MONDAY, OCTOBER 19, 2026</p><h1 id="heading">Customer feedback, <span>made clear.</span></h1><p class="subheading">Here’s what customers are telling you across every channel.</p></div><button class="primary" id="reportBtn">✦ Generate VoC report</button></div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>Total feedback</span><span class="stat-icon purple">▤</span></div><div class="stat-number" id="totalFeedback">1,284</div><div class="stat-foot positive">↗ 12.8% <span>vs. last month</span></div><div class="sparkline purple-line">▁▂▂▃▂▄▅▃▆▇▆█</div></article>
+        <article class="stat-card"><div class="stat-top"><span>Positive sentiment</span><span class="stat-icon green">☺</span></div><div class="stat-number">68.4<span class="unit">%</span></div><div class="stat-foot positive">↗ 4.2% <span>vs. last month</span></div><div class="mini-bar"><i style="width:68.4%"></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span>Negative feedback</span><span class="stat-icon red">⌁</span></div><div class="stat-number">14.2<span class="unit">%</span></div><div class="stat-foot negative">↗ 2.1% <span>needs attention</span></div><div class="mini-bar red-bar"><i style="width:14.2%"></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span>Emerging themes</span><span class="stat-icon amber">✳</span></div><div class="stat-number">08</div><div class="stat-foot neutral">3 <span>new this week</span></div><div class="theme-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      </div>
+      <div class="grid-main">
+        <article class="panel sentiment-panel"><div class="panel-head"><div><h2>Sentiment over time</h2><p>Customer mood across all channels</p></div><select id="periodSelect"><option>Last 30 days</option><option>Last 7 days</option><option>Last 90 days</option></select></div>
+          <div class="chart-legend"><span><i class="legend-dot pos"></i> Positive</span><span><i class="legend-dot neu"></i> Neutral</span><span><i class="legend-dot neg"></i> Negative</span></div>
+          <div class="chart-wrap"><div class="y-labels"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><svg viewBox="0 0 650 220" preserveAspectRatio="none" class="chart" aria-label="Sentiment line chart">
+          <defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#7667e8" stop-opacity=".18"/><stop offset="100%" stop-color="#7667e8" stop-opacity="0"/></linearGradient></defs>
+          <g class="gridlines"><path d="M0 10H650 M0 58H650 M0 106H650 M0 154H650 M0 202H650"/></g>
+          <path class="area" d="M0 78 L50 70 L100 82 L150 58 L200 64 L250 48 L300 59 L350 36 L400 46 L450 29 L500 43 L550 24 L600 31 L650 18 L650 202 L0 202Z"/>
+          <path class="line positive" d="M0 78 L50 70 L100 82 L150 58 L200 64 L250 48 L300 59 L350 36 L400 46 L450 29 L500 43 L550 24 L600 31 L650 18"/>
+          <path class="line neutral" d="M0 122 L50 115 L100 128 L150 120 L200 132 L250 116 L300 126 L350 118 L400 124 L450 110 L500 119 L550 108 L600 115 L650 101"/>
+          <path class="line negative" d="M0 170 L50 166 L100 174 L150 158 L200 168 L250 161 L300 172 L350 159 L400 165 L450 150 L500 162 L550 148 L600 155 L650 144"/>
+          </svg></div><div class="x-labels"><span>Sep 20</span><span>Sep 25</span><span>Sep 30</span><span>Oct 5</span><span>Oct 10</span><span>Oct 15</span><span>Oct 19</span></div>
+        </article>
+        <article class="panel insight-panel"><div class="panel-head"><div><h2>AI insight brief</h2><p>What matters most right now</p></div><span class="ai-badge">✦ AI</span></div>
+          <div class="insight-callout"><div class="insight-symbol">↗</div><div><b>Onboarding is improving</b><p>Positive mentions of onboarding rose <strong>18%</strong> after the latest product update.</p></div></div>
+          <div class="insight-callout warning"><div class="insight-symbol">!</div><div><b>Mobile performance needs attention</b><p>Crash and loading complaints increased <strong>23%</strong> this week, mostly on Android.</p></div></div>
+          <div class="insight-callout"><div class="insight-symbol">◎</div><div><b>Customers want integrations</b><p>Slack and Salesforce integrations appear in 46 recent requests.</p></div></div>
+          <button class="text-btn" id="askBtn">Ask LOOP a question <span>→</span></button>
+        </article>
+      </div>
+      <div class="grid-bottom">
+        <article class="panel themes-panel"><div class="panel-head"><div><h2>Top feedback themes</h2><p>Ranked by volume this month</p></div><button class="plain-btn" data-goto="themes">View all →</button></div>
+          <div class="theme-row"><div class="theme-icon lavender">✧</div><div class="theme-info"><b>Ease of use</b><small>Product experience</small></div><div class="theme-meter"><div><i style="width:83%"></i></div><small>324 mentions</small></div><span class="trend up">↗ 12%</span></div>
+          <div class="theme-row"><div class="theme-icon mint">⚡</div><div class="theme-info"><b>Performance</b><small>Product quality</small></div><div class="theme-meter"><div><i style="width:66%"></i></div><small>258 mentions</small></div><span class="trend down">↗ 23%</span></div>
+          <div class="theme-row"><div class="theme-icon peach">♡</div><div class="theme-info"><b>Customer support</b><small>Service experience</small></div><div class="theme-meter"><div><i style="width:49%"></i></div><small>192 mentions</small></div><span class="trend up">↘ 8%</span></div>
+          <div class="theme-row"><div class="theme-icon blue">⤴</div><div class="theme-info"><b>Integrations</b><small>Feature requests</small></div><div class="theme-meter"><div><i style="width:37%"></i></div><small>146 mentions</small></div><span class="trend up">↗ 16%</span></div>
+        </article>
+        <article class="panel recent-panel"><div class="panel-head"><div><h2>Recent feedback</h2><p>Latest customer voice</p></div><button class="plain-btn" data-goto="feedback">View inbox →</button></div><div id="recentList">
+          <div class="feedback-item"><div class="source-icon">G</div><div class="feedback-copy"><b>“Setup was surprisingly simple.”</b><p>Google Play · 12 min ago</p></div><span class="pill positive-pill">Positive</span></div>
+          <div class="feedback-item"><div class="source-icon purple-source">✉</div><div class="feedback-copy"><b>“The app freezes when I export.”</b><p>Support email · 34 min ago</p></div><span class="pill negative-pill">Negative</span></div>
+          <div class="feedback-item"><div class="source-icon blue-source">𝕏</div><div class="feedback-copy"><b>“Would love a Slack integration.”</b><p>Social · 1 hr ago</p></div><span class="pill neutral-pill">Neutral</span></div>
+        </div></article>
+      </div>
+      <footer>LOOP Intelligence <span>•</span> Demo workspace with sample data <span>•</span> Built for Project LOOP</footer>
+    </section>
+  </main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="closeModal">×</button><div id="modalContent"></div></section></div>
+<script src="app.js"></script>
+</body></html>
